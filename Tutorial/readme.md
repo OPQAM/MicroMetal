@@ -17,3 +17,5 @@ Tutorial/
 │   └─ 01_XXX/        ← contains 01_XXX.ino
 │
 ...
+
+Local Note: 'ard' will move you into the Tutorial folder
