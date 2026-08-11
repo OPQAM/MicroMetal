@@ -1,0 +1,36 @@
+!SESSION 2026-08-03 20:45:06.369 -----------------------------------------------
+eclipse.buildId=Version 2.2.0
+java.version=21.0.10
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_GB
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-08-03 20:47:02.838
+!MESSAGE Log4j2 initialized with config file /home/opqam/Playground/MicroMetal/Projects/STM32CUBEIDE/.metadata/.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-08-03 20:47:08.315
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2026-08-03 21:05:55.321 -----------------------------------------------
+eclipse.buildId=Version 2.2.0
+java.version=21.0.10
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_GB
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-08-03 21:06:00.908
+!MESSAGE Log4j2 initialized with config file /home/opqam/Playground/MicroMetal/Projects/STM32CUBEIDE/.metadata/.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-08-03 21:06:05.475
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2026-08-04 21:00:20.178 -----------------------------------------------
+eclipse.buildId=Version 2.2.0
+java.version=21.0.10
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_GB
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-08-04 21:00:28.406
+!MESSAGE Log4j2 initialized with config file /home/opqam/Playground/MicroMetal/Projects/STM32CUBEIDE/.metadata/.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-08-04 21:00:34.471
+!MESSAGE Started RMI Server, listening on port 41337

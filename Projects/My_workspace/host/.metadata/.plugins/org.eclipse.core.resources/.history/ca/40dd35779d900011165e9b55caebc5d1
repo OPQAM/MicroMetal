@@ -1,0 +1,14 @@
+/*
+ * main.c
+ *
+ *  Created on: 5 Aug 2026
+ *      Author: opqam
+ */
+
+#include<stdio.h>
+{
+	printf("Hello world\n");
+	printf("Press 'Enter' to exit this application.\n");
+	getchar();
+	return 0;
+}
