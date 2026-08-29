@@ -1,0 +1,19 @@
+15:18:23 **** Build of configuration Debug for project Hello_World ****
+make -j4 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f407vgtx.d" -MT"Startup/startup_stm32f407vgtx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f407vgtx.o" "../Startup/startup_stm32f407vgtx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -o "Hello_World.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/opqam/Playground/MicroMetal/Projects/My_workspace/target/Hello_World/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Hello_World.map" -Wl,--gc-sections -static -specs=rdimon.specs -lc -lrdimon --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Hello_World.elf
+ 
+arm-none-eabi-size  Hello_World.elf 
+arm-none-eabi-objdump -h -S Hello_World.elf  > "Hello_World.list"
+   text	   data	    bss	    dec	    hex	filename
+   4480	    100	   2076	   6656	   1a00	Hello_World.elf
+Finished building: default.size.stdout
+ 
+Finished building: Hello_World.list
+ 
+
+15:18:23 Build Finished. 0 errors, 0 warnings. (took 434ms)
+
