@@ -29,16 +29,28 @@ int main(void)
     
     int shm_fd = shm_open("/my_memory", O_CREAT | O_RDWR, 0600);
 
+    if (ftruncate(shm_fd, size) == -1) {
+        perror("ftruncate");
+        return 1;
+    }
 
     void *addr = mmap(
             NULL,                                    
             size,
             PROT_READ | PROT_WRITE,
-            MAP_PRIVATE | MAP_ANONYMOUS,
-            -1,
+            MAP_SHARED,
+            shm_fd,
             0
+            );
 
-    );
+    void *addr2 = mmap(
+            NULL,
+            size,
+            PROT_READ | PROT_WRITE,
+            MAP_SHARED,
+            shm_fd,
+            0
+            );
 
     if (addr == MAP_FAILED) {
         perror("mmap");
@@ -46,12 +58,16 @@ int main(void)
     }
 
     uintptr_t virtual_address = (uintptr_t)addr;
+    uintptr_t virtual_address2 = (uintptr_t)addr2;
     
     *(int *)addr = 42;
 
     
-    printf("Mapped virtual address: %p\n", addr);
-    printf("Value at that address: %d\n", *(int *)addr);
+    printf("Mapped virtual address 1: %p\n", addr);
+    printf("Mapped virtual address 2: %p\n", addr2);
+
+    printf("Value at VA  address 1: %d\n", *(int *)addr);
+    printf("Value at VA  address 2: %d\n", *(int *)addr2);
     printf("PID: %d\n", pid);
    
     uintptr_t page_offset = virtual_address & 0xFFF; 
