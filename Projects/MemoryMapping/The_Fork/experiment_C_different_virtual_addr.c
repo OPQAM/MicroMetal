@@ -83,7 +83,8 @@ int main(void)
     uintptr_t page_offset = virtual_address & 0xFFF; 
     uintptr_t page_offset2 = virtual_address2 & 0xFFF; 
 
-    printf("Page offset: 0x%lx\n", page_offset);
+    printf("Page offset 1: 0x%lx\n", page_offset);
+    printf("Page offset 2: 0x%lx\n", page_offset2);
     
     uintptr_t virtual_page = virtual_address >> 12; 
     uintptr_t virtual_page2 = virtual_address2 >> 12; 
