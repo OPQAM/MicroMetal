@@ -1,16 +1,15 @@
 /*
- * File: mmap_test02.c
+ * File: experiment_a_pre_fork.c
  * Author:
- * Description: A program that will retrieve several bits of information
- *              like its given virtual and physical addresses.
+ * Description: LEGO grabbing. Getting the tools and printing them out.
  *
- * Date: 2026-08-30
+ * Date: 2026-08-31
  *
  * Compilation:
- * gcc -Wall -Wextra -std=c11 -g mmap_test02.c -o mmap_test02
+ * gcc -Wall -Wextra -std=c11 -g experiment_a_pre_fork.c -o experiment_a_pre_fork
  *
  * Usage:
- * ./mmap_test02
+ * ./experiment_a_pre_fork
  */
 
 #define _GNU_SOURCE                                  

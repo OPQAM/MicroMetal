@@ -1,5 +1,5 @@
 /*
- * File: mmap_test02.c
+ * File: mmap_test_virtual.c
  * Author:
  * Description: A program that will retrieve several bits of information
  *              like its given virtual and physical addresses.
@@ -7,10 +7,10 @@
  * Date: 2026-08-30
  *
  * Compilation:
- * gcc -Wall -Wextra -std=c11 -g mmap_test02.c -o mmap_test02
+ * gcc -Wall -Wextra -std=c11 -g mmap_test_virtual.c -o mmap_test_virtual
  *
  * Usage:
- * ./mmap_test02
+ * ./mmap_test_virtual
  */
 
 #define _GNU_SOURCE                                  
@@ -19,10 +19,19 @@
 #include <unistd.h>
 #include <stdint.h>
 #include <fcntl.h>
+#include <sys/stat.h>
 
 int main(void)
 {
     size_t size = 4096;
+    pid_t pid = getpid();
+    // Instead of asking for anonymous memory, we need a 'thing' that can be mapped twice
+    // We'll use a POSIX shared-memory object with shm_open(). We can thing of this as 
+    // a named kernel object that can be mapped into a process's virtual address space
+    int shm_fd = shm_open("/my_memory", O_CREAT | O_RDWR, 0600);
+    
+    // We'll also need to make the object's size = 4096 bytes
+    // and then mmap() it twice
 
     void *addr = mmap(
             NULL,                                    
@@ -42,19 +51,6 @@ int main(void)
     uintptr_t virtual_address = (uintptr_t)addr;
     
     *(int *)addr = 42;
-
-    // forking the process
-    pid_t child_pid = fork();
-    
-    if (child_pid == -1) {
-        perror("fork");
-        return 1;
-    }
-    if (child_pid == 0) {
-        *(int *)addr = 666;
-    }
-
-    pid_t pid = getpid(); // moving it here so that it's not just the parent's PID
     
     printf("Mapped virtual address: %p\n", addr);
     printf("Value at that address: %d\n", *(int *)addr);

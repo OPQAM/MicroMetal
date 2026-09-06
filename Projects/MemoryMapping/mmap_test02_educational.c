@@ -1,16 +1,15 @@
 /*
- * File: mmap_test02.c
+ * File: mmap_test02_educational.c
  * Author:
- * Description: A program that will retrieve several bits of information
- *              like its given virtual and physical addresses.
+ * Description: AI comment edition
  *
  * Date: 2026-08-30
  *
  * Compilation:
- * gcc -Wall -Wextra -std=c11 -g mmap_test02.c -o mmap_test02
+ * gcc -Wall -Wextra -std=c11 -g mmap_test02_educational.c -o mmap_test02_educational
  *
  * Usage:
- * ./mmap_test02
+ * ./mmap_test02_educational
  */
 
 #define _GNU_SOURCE                                  
@@ -216,3 +215,4 @@ int main(void)
 }
 
 /* NOTES: */
+// Comment stay. Asked AI to basically comment the whole thing, for a d'ifferent' perspective.
