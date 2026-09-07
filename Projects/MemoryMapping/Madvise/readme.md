@@ -20,4 +20,8 @@ MADV_DONTNEED
 
 ---
 
+Side note:
 
+cat /proc/self/status prints to stdout CAT's process status.
+
+We can print bash's process's status, of course, with cat /proc/$$/status
